@@ -1,14 +1,19 @@
 # Jupyter Lab
 
-## Overview
-Creates invironment to run Jupyter Lab
+This `Dockerfile` creates environment to run Jupyter Lab inside docker
 
-## One click start
+## Quickstart
+Change dir to your project folder and run command:
 ```bash
 docker build -f https://raw.githubusercontent.com/jatikuma29iv/dev-env/refs/heads/main/jupyterlab/Dockerfile -t jupyterlab .
-docker run --rm -v $(pwd):/app -p 8888:8888 --name jupyterlab jupyterlab
+docker run --rm -v $(pwd):$(pwd) -w $(pwd) -p 8888:8888 --name jupyterlab jupyterlab
+```
+pick URL from the `output` and open in your browser, eg:
+<br/>
+http://127.0.0.1:8888/lab?token=da08e7fe1fcb62fca99c875185b7823ac2296064d45edc2f
 
-# output
+output
+```text
 [I 2025-05-02 07:44:42.378 ServerApp] jupyter_server_terminals | extension was successfully linked.
 [I 2025-05-02 07:44:42.380 ServerApp] jupyterlab | extension was successfully linked.
 [I 2025-05-02 07:44:42.382 ServerApp] Writing Jupyter server cookie secret to /root/.local/share/jupyter/runtime/jupyter_cookie_secret
@@ -37,7 +42,3 @@ docker run --rm -v $(pwd):/app -p 8888:8888 --name jupyterlab jupyterlab
 r, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-langua
 geserver-bin, vscode-json-languageserver-bin, yaml-language-server
 ```
-
-open URL in browser:
-http://127.0.0.1:8888/lab?token=da08e7fe1fcb62fca99c875185b7823ac2296064d45edc2f
-
