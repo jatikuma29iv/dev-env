@@ -5,8 +5,8 @@ Creates invironment to run Jupyter Lab
 
 ## One click start
 ```bash
-docker build -f <> -t jupyterlab .
-docker run --rm -$(pwd):/app -p 8888:8888 --name jupyterlab jupyterlab
+docker build -f https://raw.githubusercontent.com/jatikuma29iv/dev-env/refs/heads/main/jupyterlab/Dockerfile -t jupyterlab .
+docker run --rm -v $(pwd):/app -p 8888:8888 --name jupyterlab jupyterlab
 
 # output
 [I 2025-05-02 07:44:42.378 ServerApp] jupyter_server_terminals | extension was successfully linked.
@@ -20,7 +20,7 @@ docker run --rm -$(pwd):/app -p 8888:8888 --name jupyterlab jupyterlab
 [I 2025-05-02 07:44:42.676 LabApp] JupyterLab application directory is /usr/local/share/jupyter/lab
 [I 2025-05-02 07:44:42.677 LabApp] Extension Manager is 'pypi'.
 [I 2025-05-02 07:44:42.708 ServerApp] jupyterlab | extension was successfully loaded.
-[I 2025-05-02 07:44:42.709 ServerApp] Serving notebooks from local directory: /Users/jet/.dockerfiles
+[I 2025-05-02 07:44:42.709 ServerApp] Serving notebooks from local directory: /User/you/app
 [I 2025-05-02 07:44:42.709 ServerApp] Jupyter Server 2.15.0 is running at:
 [I 2025-05-02 07:44:42.709 ServerApp] http://7917aef9d12e:8888/lab?token=da08e7fe1fcb62fca99c875185b7823ac2296064d45edc2f
 [I 2025-05-02 07:44:42.709 ServerApp]     http://127.0.0.1:8888/lab?token=da08e7fe1fcb62fca99c875185b7823ac2296064d45edc2f
